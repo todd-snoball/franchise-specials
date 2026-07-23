@@ -1,0 +1,24 @@
+# ============================================================================
+# Site-wide config for specials.snoball.com
+# Place this file at the ROOT of the site (the level ABOVE the /two-men and
+# /authority-brands folders), NOT inside a campaign folder. A netlify.toml
+# inside a subfolder is ignored by Netlify. This one file governs every
+# current and future campaign folder on the domain.
+# ============================================================================
+
+# Netlify Image CDN allowlist. Matched on the source DOMAIN, so these two lines
+# cover every page's images and every future page, as long as images come from
+# these domains. Add a line only if a future page pulls from a new domain.
+[images]
+  remote_images = [
+    'https://images\.bestcompany\.com/.*',
+    'https://s3\.us-west-1\.amazonaws\.com/.*'
+  ]
+
+# Long, immutable cache for the self-hosted Inter fonts. Your pages keep a
+# /fonts folder inside each campaign folder, so this matches fonts one level
+# deep (e.g. /two-men/fonts/... and /authority-brands/fonts/...).
+[[headers]]
+  for = "/*/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
