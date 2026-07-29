@@ -66,28 +66,6 @@ html, body {
 }
 
 /* ====================================================================
-   PLACEHOLDER TILES (temporary)
-   Delete .sb-ph once real logos and headshots are dropped in.
-   No network requests, so they do not affect PageSpeed.
-   ==================================================================== */
-.sb-ph {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  box-sizing: border-box;
-  background: #F1F3F7;
-  border: 1px dashed #C3C9D4;
-  color: #8A93A3;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  line-height: 1.3;
-  padding: 6px;
-}
-
-/* ====================================================================
    Logo Marquee
    ==================================================================== */
 .sb-marquee {
@@ -123,12 +101,6 @@ html, body {
   height: auto;
   display: block;
 }
-/* Placeholder sizing inside a marquee slot */
-.sb-marquee-logo .sb-ph {
-  width: 100%;
-  height: 62px;
-  border-radius: 8px;
-}
 @keyframes sb-marquee-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -152,6 +124,21 @@ html, body {
    ==================================================================== */
 @media (max-width: 540px) {
   .snoball-mc-landing h1 { font-size: 42px !important; }
+}
+
+/* ====================================================================
+   Pink marker highlight, used on a phrase inside the testimonial quote.
+   The gradient band is inset top and bottom so it reads as a highlighter
+   stroke rather than a filled box. box-decoration-break keeps the stroke
+   intact if the phrase wraps to a second line.
+   ==================================================================== */
+.sb-mark {
+  background-image: linear-gradient(180deg, rgba(255, 148, 251, 0) 14%, rgba(255, 148, 251, 0.8) 14%, rgba(255, 148, 251, 0.8) 88%, rgba(255, 148, 251, 0) 88%);
+  padding: 0 5px;
+  margin: 0 -5px;
+  border-radius: 2px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 /* ====================================================================
@@ -350,69 +337,49 @@ html, body {
 </section>
 
 <!-- ============== REAL CUSTOMER RESULTS ============== -->
-<!-- SWAP: three roofing customer cards. Per card, fill the logo slot, the big stat,
-     the one-line result detail, the quote, and the headshot + name + title.
-     Headshot pattern (background-image so you can nudge the crop):
-     <div style="width: 96px; height: 96px; border-radius: 50%; background-image: url('/.netlify/images?url=<encoded>&amp;w=200&amp;fm=webp&amp;q=72'); background-size: cover; background-position: center; border: 3px solid #fff; box-shadow: 0 4px 12px rgba(18, 17, 85, 0.2);" role="img" aria-label="Name"></div> -->
-<section class="sb-defer" style="background: #F8FAFC; padding: 72px 24px 80px 24px;">
+<!-- Two stat cards, then a card-less centered pull quote underneath.
+     The highlight on "real difference maker" is a .sb-mark span: a gradient
+     band sized to sit behind the text like a marker stroke, with
+     box-decoration-break: clone so it survives a line wrap.
+     Headshot uses background-image so the crop can be nudged with
+     background-size / background-position without touching the markup. -->
+<section class="sb-defer" style="background: #F8FAFC; padding: 72px 24px 84px 24px;">
 <div style="max-width: 1100px; margin: 0 auto;">
 <div style="text-align: center; margin-bottom: 40px;">
 <div style="font-size: 13px; font-weight: bold; letter-spacing: 0.16em; text-transform: uppercase; color: #1a39a9; margin-bottom: 12px;">Real Customer Results</div>
 <h2 style="font-size: 34px; line-height: 1.15; font-weight: 800; margin: 0 auto 12px auto; max-width: 720px; color: #272b30; letter-spacing: -0.01em;">Referrals That Drive Revenue.</h2>
-<p style="font-size: 17px; color: #52535c; margin: 0;">Three roofers, three different markets, real numbers.</p>
+<p style="font-size: 17px; color: #52535c; margin: 0;">Real numbers from real roofing companies.</p>
 </div>
-<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-<!-- ===== Results card 1 (placeholder) ===== -->
-<div style="flex: 1 1 300px; min-width: 260px; max-width: 340px; background: #FFFFFF; border-radius: 14px; padding: 32px 24px 28px 24px; border: 1px solid #E5E6EB; text-align: center;">
-<div style="height: 56px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px;"><div class="sb-ph" style="width: 180px; height: 48px; border-radius: 8px;">Customer logo</div></div>
-<div style="font-size: 13px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #6c727f; margin-bottom: 6px;">Company Name</div>
-<div style="font-size: 36px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em; margin-bottom: 8px;">000<span style="color: #8c7dd0;">+</span></div>
-<div style="font-size: 14px; color: #52535c; line-height: 1.5; margin-bottom: 20px;">One line on the result. Total referrals, reviews, or revenue.</div>
-<div style="height: 1px; background: #E5E6EB; width: 60%; margin: 0 auto 18px auto;"></div>
-<div style="font-size: 42px; color: #8c7dd0; opacity: 0.5; line-height: 0.5; font-family: Georgia, 'Times New Roman', serif; margin-bottom: 8px; height: 20px;">&ldquo;</div>
-<p style="font-size: 13px; color: #52535c; font-style: italic; line-height: 1.55; margin: 0 0 20px 0;">Short customer quote goes here. One or two sentences, max.</p>
-<div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-<div class="sb-ph" style="width: 96px; height: 96px; border-radius: 50%;">Headshot</div>
-<div style="display: flex; flex-direction: column; gap: 2px; align-items: center;">
-<div style="font-size: 13px; color: #272b30; font-weight: bold; line-height: 1.2;">First L.</div>
-<div style="font-size: 11px; color: #6c727f; font-weight: 500; line-height: 1.25;">Title</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: stretch;">
+<!-- ===== Anthony C. Leonard Roofing ===== -->
+<div style="flex: 1 1 380px; min-width: 280px; max-width: 420px; background: #FFFFFF; border-radius: 14px; padding: 30px 24px 26px 24px; border: 1px solid #E5E6EB; text-align: center;">
+<div style="height: 56px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;"><img style="max-height: 52px; max-width: 200px; width: auto; height: auto; display: block;" src="https://images.bestcompany.com/blog/AL-Logo-SVG.svg" alt="Anthony C. Leonard Roofing" decoding="async" loading="lazy"></div>
+<div style="font-size: 13px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #6c727f; margin-bottom: 20px;">Anthony C. Leonard Roofing</div>
+<div style="display: flex; align-items: stretch; justify-content: center;">
+<div style="flex: 1 1 0; text-align: center; padding: 0 4px; border-right: 1px solid #E5E6EB;"><div style="font-size: 30px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em;">42</div><div style="font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #6c727f; margin-top: 6px; line-height: 1.2;">Referrals</div></div>
+<div style="flex: 1 1 0; text-align: center; padding: 0 4px; border-right: 1px solid #E5E6EB;"><div style="font-size: 30px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em;">41</div><div style="font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #6c727f; margin-top: 6px; line-height: 1.2;">Reviews</div></div>
+<div style="flex: 1 1 0; text-align: center; padding: 0 4px;"><div style="font-size: 30px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em;">20</div><div style="font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #6c727f; margin-top: 6px; line-height: 1.2;">Sales</div></div>
 </div>
 </div>
-</div>
-<!-- ===== Results card 2 (placeholder) ===== -->
-<div style="flex: 1 1 300px; min-width: 260px; max-width: 340px; background: #FFFFFF; border-radius: 14px; padding: 32px 24px 28px 24px; border: 1px solid #E5E6EB; text-align: center;">
-<div style="height: 56px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px;"><div class="sb-ph" style="width: 180px; height: 48px; border-radius: 8px;">Customer logo</div></div>
-<div style="font-size: 13px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #6c727f; margin-bottom: 6px;">Company Name</div>
-<div style="font-size: 36px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em; margin-bottom: 8px;">$000K<span style="color: #8c7dd0;">+</span></div>
-<div style="font-size: 14px; color: #52535c; line-height: 1.5; margin-bottom: 20px;">One line on the result. Total referrals, reviews, or revenue.</div>
-<div style="height: 1px; background: #E5E6EB; width: 60%; margin: 0 auto 18px auto;"></div>
-<div style="font-size: 42px; color: #8c7dd0; opacity: 0.5; line-height: 0.5; font-family: Georgia, 'Times New Roman', serif; margin-bottom: 8px; height: 20px;">&ldquo;</div>
-<p style="font-size: 13px; color: #52535c; font-style: italic; line-height: 1.55; margin: 0 0 20px 0;">Short customer quote goes here. One or two sentences, max.</p>
-<div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-<div class="sb-ph" style="width: 96px; height: 96px; border-radius: 50%;">Headshot</div>
-<div style="display: flex; flex-direction: column; gap: 2px; align-items: center;">
-<div style="font-size: 13px; color: #272b30; font-weight: bold; line-height: 1.2;">First L.</div>
-<div style="font-size: 11px; color: #6c727f; font-weight: 500; line-height: 1.25;">Title</div>
+<!-- ===== Bulldog Roofing ===== -->
+<div style="flex: 1 1 380px; min-width: 280px; max-width: 420px; background: #FFFFFF; border-radius: 14px; padding: 30px 24px 26px 24px; border: 1px solid #E5E6EB; text-align: center;">
+<div style="height: 56px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;"><img style="max-height: 52px; max-width: 200px; width: auto; height: auto; display: block;" src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2Fbulldog%2520logo.png&amp;w=400&amp;fm=webp&amp;q=72" alt="Bulldog Roofing" decoding="async" loading="lazy"></div>
+<div style="font-size: 13px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #6c727f; margin-bottom: 20px;">Bulldog Roofing</div>
+<div style="display: flex; align-items: stretch; justify-content: center;">
+<div style="flex: 1 1 0; text-align: center; padding: 0 4px; border-right: 1px solid #E5E6EB;"><div style="font-size: 30px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em;">46</div><div style="font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #6c727f; margin-top: 6px; line-height: 1.2;">Referrals</div></div>
+<div style="flex: 1 1 0; text-align: center; padding: 0 4px; border-right: 1px solid #E5E6EB;"><div style="font-size: 30px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em;">26</div><div style="font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #6c727f; margin-top: 6px; line-height: 1.2;">Reviews</div></div>
+<div style="flex: 1 1 0; text-align: center; padding: 0 4px;"><div style="font-size: 30px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em;">9</div><div style="font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #6c727f; margin-top: 6px; line-height: 1.2;">Sales</div></div>
 </div>
 </div>
 </div>
-<!-- ===== Results card 3 (placeholder) ===== -->
-<div style="flex: 1 1 300px; min-width: 260px; max-width: 340px; background: #FFFFFF; border-radius: 14px; padding: 32px 24px 28px 24px; border: 1px solid #E5E6EB; text-align: center;">
-<div style="height: 56px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px;"><div class="sb-ph" style="width: 180px; height: 48px; border-radius: 8px;">Customer logo</div></div>
-<div style="font-size: 13px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #6c727f; margin-bottom: 6px;">Company Name</div>
-<div style="font-size: 36px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em; margin-bottom: 8px;">00<span style="color: #8c7dd0;">+</span></div>
-<div style="font-size: 14px; color: #52535c; line-height: 1.5; margin-bottom: 20px;">One line on the result. Total referrals, reviews, or revenue.</div>
-<div style="height: 1px; background: #E5E6EB; width: 60%; margin: 0 auto 18px auto;"></div>
-<div style="font-size: 42px; color: #8c7dd0; opacity: 0.5; line-height: 0.5; font-family: Georgia, 'Times New Roman', serif; margin-bottom: 8px; height: 20px;">&ldquo;</div>
-<p style="font-size: 13px; color: #52535c; font-style: italic; line-height: 1.55; margin: 0 0 20px 0;">Short customer quote goes here. One or two sentences, max.</p>
-<div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-<div class="sb-ph" style="width: 96px; height: 96px; border-radius: 50%;">Headshot</div>
-<div style="display: flex; flex-direction: column; gap: 2px; align-items: center;">
-<div style="font-size: 13px; color: #272b30; font-weight: bold; line-height: 1.2;">First L.</div>
-<div style="font-size: 11px; color: #6c727f; font-weight: 500; line-height: 1.25;">Title</div>
-</div>
-</div>
-</div>
+
+<!-- ===== Testimonial: Travis Rosenbloom, floating (no card) ===== -->
+<div style="max-width: 780px; margin: 56px auto 0 auto; text-align: center;">
+<div style="width: 120px; height: 120px; margin: 0 auto 24px auto; border-radius: 50%; background-image: url('/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2Ftravis%2520rosenbloom.jpeg&amp;w=300&amp;fm=webp&amp;q=75'); background-size: cover; background-position: center 20%; border: 4px solid #FFFFFF; box-shadow: 0 12px 32px rgba(18, 17, 85, 0.2);" role="img" aria-label="Travis Rosenbloom"></div>
+<p style="font-size: 23px; line-height: 1.55; font-weight: 500; color: #272b30; margin: 0 0 24px 0; letter-spacing: -0.01em;">Snoball has been a real difference maker. <span class="sb-mark">They do all the work</span> - we just close the warm leads that land in our CRM. It&rsquo;s awesome.</p>
+<div style="width: 32px; height: 3px; background: #8BD7DF; margin: 0 auto 16px auto; border-radius: 2px;"></div>
+<div style="font-size: 15px; font-weight: 800; color: #272b30; line-height: 1.3;">Travis Rosenbloom</div>
+<div style="font-size: 13px; color: #6c727f; font-weight: 500; margin-top: 3px;">VP of Marketing, Skycrest Roofing</div>
 </div>
 </div>
 </section>
