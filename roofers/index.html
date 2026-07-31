@@ -86,7 +86,7 @@ html, body {
 }
 .sb-marquee-logo {
   flex-shrink: 0;
-  height: 80px;
+  height: 96px;
   width: 190px;
   display: flex;
   align-items: center;
@@ -101,6 +101,11 @@ html, body {
   height: auto;
   display: block;
 }
+/* Roofio reads small at the shared cap, so it gets a 40% taller ceiling
+   (64px to 90px) and a wider slot so the extra height is not width-clamped.
+   Row height is 96px so the taller logo never clips. */
+.sb-marquee-logo.sb-logo-roofio { width: 260px; }
+.sb-marquee-logo.sb-logo-roofio img { max-height: 90px; }
 @keyframes sb-marquee-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -233,9 +238,9 @@ html, body {
 <!-- Eyebrow / audience tag -->
 <div style="display: inline-block; font-size: 13px; font-weight: bold; letter-spacing: 0.16em; text-transform: uppercase; color: #8bd7df; background: rgba(139, 215, 223, 0.1); border: 1px solid rgba(139, 215, 223, 0.3); padding: 7px 16px; border-radius: 999px; margin-bottom: 22px;">Referrals for Roofers</div>
 <!-- H1 -->
-<h1 style="font-size: 68px; line-height: 1.04; font-weight: 800; margin: 0 0 20px 0; letter-spacing: -0.03em; color: #ffffff;">Your next roof jobs are<br>already <span style="background-image: linear-gradient(90deg, #8BD7DF 0%, #FF94FB 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: #8bd7df;">in your CRM</span></h1>
-<!-- Subtext (referrals + done for you + lead quality) -->
-<p style="font-size: 18px; line-height: 1.6; color: rgba(255, 255, 255, 0.92); margin: 0 auto 28px auto; max-width: 600px;">We turn your past customers into referrals. Done for you.<br>The highest-closing, lowest-cost leads you&rsquo;ll get.</p>
+<h1 style="font-size: 68px; line-height: 1.04; font-weight: 800; margin: 0 0 20px 0; letter-spacing: -0.03em; color: #ffffff;">The easiest way to get new <span style="background-image: linear-gradient(90deg, #8BD7DF 0%, #FF94FB 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: #8bd7df;">roofing jobs</span></h1>
+<!-- Subtext (referrals + done for you) -->
+<p style="font-size: 18px; line-height: 1.6; color: rgba(255, 255, 255, 0.92); margin: 0 auto 28px auto; max-width: 600px;">We turn your past customers into referrals. The best part is it&rsquo;s all done for you.</p>
 <!-- G2 social proof badge, just below the subtext -->
 <div style="display: flex; justify-content: center;">
 <div style="display: inline-flex; align-items: center; gap: 11px; padding: 8px 16px 8px 10px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 999px;"><img style="width: 29px; height: 29px; display: block; flex-shrink: 0;" src="/.netlify/images?url=https%3A%2F%2Fs3.us-west-1.amazonaws.com%2Fimages.bestcompany.com%2Fbcbs%2Fsnoball%2Flogos%2Fg2-logo-white.webp&amp;w=120&amp;fm=webp&amp;q=75" alt="G2">
@@ -316,19 +321,19 @@ html, body {
 <div class="sb-marquee-track">
 <!-- ===== Unique logo set (8) ===== -->
 <div class="sb-marquee-logo"><img src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2Fbulldog%2520logo.png&amp;w=400&amp;fm=webp&amp;q=72" alt="Bulldog Roofing" decoding="async" loading="lazy"></div>
-<div class="sb-marquee-logo"><img src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2FReNu-Solar.png&amp;w=400&amp;fm=webp&amp;q=72" alt="ReNu Solar &amp; Roofing" decoding="async" loading="lazy"></div>
+<div class="sb-marquee-logo"><img src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2Frenu%2520solar%2520roofing%2520logo.png&amp;w=400&amp;fm=webp&amp;q=72" alt="ReNu Solar &amp; Roofing" decoding="async" loading="lazy"></div>
 <div class="sb-marquee-logo"><img src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2Fvalor%2520roof%2520and%2520solar%25202.png&amp;w=400&amp;fm=webp&amp;q=72" alt="Valor Roofing &amp; Solar" decoding="async" loading="lazy"></div>
 <div class="sb-marquee-logo"><img src="https://images.bestcompany.com/blog/aa%20roof%20logo.svg" alt="A&amp;A Roofing" decoding="async" loading="lazy"></div>
-<div class="sb-marquee-logo"><img src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2Froofio%2520logo%25202.jpeg&amp;w=400&amp;fm=webp&amp;q=72" alt="Roofio" decoding="async" loading="lazy"></div>
+<div class="sb-marquee-logo sb-logo-roofio"><img src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2Froofio%2520logo%25202.jpeg&amp;w=560&amp;fm=webp&amp;q=72" alt="Roofio" decoding="async" loading="lazy"></div>
 <div class="sb-marquee-logo"><img src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2Fcapital%2520city%2520logo.webp&amp;w=400&amp;fm=webp&amp;q=75" alt="Capital City Roofing" decoding="async" loading="lazy"></div>
 <div class="sb-marquee-logo"><img src="https://images.bestcompany.com/blog/AL-Logo-SVG.svg" alt="Anthony C. Leonard Roofing" decoding="async" loading="lazy"></div>
 <div class="sb-marquee-logo"><img src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2Fexcel%2520roofing%2520logo.png&amp;w=400&amp;fm=webp&amp;q=72" alt="Excel Roofing Solutions" decoding="async" loading="lazy"></div>
 <!-- ===== Duplicate set (aria-hidden), required for seamless loop ===== -->
 <div class="sb-marquee-logo" aria-hidden="true"><img src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2Fbulldog%2520logo.png&amp;w=400&amp;fm=webp&amp;q=72" alt="" decoding="async" loading="lazy"></div>
-<div class="sb-marquee-logo" aria-hidden="true"><img src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2FReNu-Solar.png&amp;w=400&amp;fm=webp&amp;q=72" alt="" decoding="async" loading="lazy"></div>
+<div class="sb-marquee-logo" aria-hidden="true"><img src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2Frenu%2520solar%2520roofing%2520logo.png&amp;w=400&amp;fm=webp&amp;q=72" alt="" decoding="async" loading="lazy"></div>
 <div class="sb-marquee-logo" aria-hidden="true"><img src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2Fvalor%2520roof%2520and%2520solar%25202.png&amp;w=400&amp;fm=webp&amp;q=72" alt="" decoding="async" loading="lazy"></div>
 <div class="sb-marquee-logo" aria-hidden="true"><img src="https://images.bestcompany.com/blog/aa%20roof%20logo.svg" alt="" decoding="async" loading="lazy"></div>
-<div class="sb-marquee-logo" aria-hidden="true"><img src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2Froofio%2520logo%25202.jpeg&amp;w=400&amp;fm=webp&amp;q=72" alt="" decoding="async" loading="lazy"></div>
+<div class="sb-marquee-logo sb-logo-roofio" aria-hidden="true"><img src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2Froofio%2520logo%25202.jpeg&amp;w=560&amp;fm=webp&amp;q=72" alt="" decoding="async" loading="lazy"></div>
 <div class="sb-marquee-logo" aria-hidden="true"><img src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2Fcapital%2520city%2520logo.webp&amp;w=400&amp;fm=webp&amp;q=75" alt="" decoding="async" loading="lazy"></div>
 <div class="sb-marquee-logo" aria-hidden="true"><img src="https://images.bestcompany.com/blog/AL-Logo-SVG.svg" alt="" decoding="async" loading="lazy"></div>
 <div class="sb-marquee-logo" aria-hidden="true"><img src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2Fexcel%2520roofing%2520logo.png&amp;w=400&amp;fm=webp&amp;q=72" alt="" decoding="async" loading="lazy"></div>
@@ -356,9 +361,9 @@ html, body {
 <div style="height: 56px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;"><img style="max-height: 52px; max-width: 200px; width: auto; height: auto; display: block;" src="https://images.bestcompany.com/blog/AL-Logo-SVG.svg" alt="Anthony C. Leonard Roofing" decoding="async" loading="lazy"></div>
 <div style="font-size: 13px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #6c727f; margin-bottom: 20px;">Anthony C. Leonard Roofing</div>
 <div style="display: flex; align-items: stretch; justify-content: center;">
-<div style="flex: 1 1 0; text-align: center; padding: 0 4px; border-right: 1px solid #E5E6EB;"><div style="font-size: 30px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em;">42</div><div style="font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #6c727f; margin-top: 6px; line-height: 1.2;">Referrals</div></div>
-<div style="flex: 1 1 0; text-align: center; padding: 0 4px; border-right: 1px solid #E5E6EB;"><div style="font-size: 30px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em;">41</div><div style="font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #6c727f; margin-top: 6px; line-height: 1.2;">Reviews</div></div>
-<div style="flex: 1 1 0; text-align: center; padding: 0 4px;"><div style="font-size: 30px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em;">20</div><div style="font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #6c727f; margin-top: 6px; line-height: 1.2;">Sales</div></div>
+<div style="flex: 1 1 0; text-align: center; padding: 0 4px; border-right: 1px solid #E5E6EB;"><div style="font-size: 30px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em;">42</div><div style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6c727f; margin-top: 6px; line-height: 1.2;">Referrals</div></div>
+<div style="flex: 1 1 0; text-align: center; padding: 0 4px; border-right: 1px solid #E5E6EB;"><div style="font-size: 30px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em;">41</div><div style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6c727f; margin-top: 6px; line-height: 1.2;">Reviews</div></div>
+<div style="flex: 1 1 0; text-align: center; padding: 0 4px;"><div style="font-size: 30px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em;">20</div><div style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6c727f; margin-top: 6px; line-height: 1.2;">Sales</div></div>
 </div>
 </div>
 <!-- ===== Bulldog Roofing ===== -->
@@ -366,9 +371,9 @@ html, body {
 <div style="height: 56px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;"><img style="max-height: 52px; max-width: 200px; width: auto; height: auto; display: block;" src="/.netlify/images?url=https%3A%2F%2Fimages.bestcompany.com%2Fblog%2Fbulldog%2520logo.png&amp;w=400&amp;fm=webp&amp;q=72" alt="Bulldog Roofing" decoding="async" loading="lazy"></div>
 <div style="font-size: 13px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #6c727f; margin-bottom: 20px;">Bulldog Roofing</div>
 <div style="display: flex; align-items: stretch; justify-content: center;">
-<div style="flex: 1 1 0; text-align: center; padding: 0 4px; border-right: 1px solid #E5E6EB;"><div style="font-size: 30px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em;">46</div><div style="font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #6c727f; margin-top: 6px; line-height: 1.2;">Referrals</div></div>
-<div style="flex: 1 1 0; text-align: center; padding: 0 4px; border-right: 1px solid #E5E6EB;"><div style="font-size: 30px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em;">26</div><div style="font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #6c727f; margin-top: 6px; line-height: 1.2;">Reviews</div></div>
-<div style="flex: 1 1 0; text-align: center; padding: 0 4px;"><div style="font-size: 30px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em;">9</div><div style="font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #6c727f; margin-top: 6px; line-height: 1.2;">Sales</div></div>
+<div style="flex: 1 1 0; text-align: center; padding: 0 4px; border-right: 1px solid #E5E6EB;"><div style="font-size: 30px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em;">46</div><div style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6c727f; margin-top: 6px; line-height: 1.2;">Referrals</div></div>
+<div style="flex: 1 1 0; text-align: center; padding: 0 4px; border-right: 1px solid #E5E6EB;"><div style="font-size: 30px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em;">26</div><div style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6c727f; margin-top: 6px; line-height: 1.2;">Reviews</div></div>
+<div style="flex: 1 1 0; text-align: center; padding: 0 4px;"><div style="font-size: 30px; font-weight: 800; color: #1a39a9; line-height: 1; letter-spacing: -0.02em;">9</div><div style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6c727f; margin-top: 6px; line-height: 1.2;">Sales</div></div>
 </div>
 </div>
 </div>
